@@ -1,0 +1,331 @@
+:root {
+  font: small-caps bold 16px/1 sans-serif;
+  font-family: Georgia, serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  border: thick double #32a1ce;
+  animation: gradient 15s ease infinite;
+	height: 100vh;
+  background-size: 400% 400%;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #ffffff;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.affirmation-title {
+  border-style: double;
+  border-color: #0c69d3;
+  padding: 0.5em;
+  border-radius: 30px;
+  border-width: 8px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in-text {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.glass-card {
+    background: rgba(14, 13, 13, 0.4); /* White background with 40% opacity */
+    backdrop-filter: blur(10px); /* Apply blur to the background behind the element */
+    border: 10px solid rgba(255, 255, 255, 0.2); /* Light border for the frosted edge */
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 5px; /* Internal padding for content */
+    /* Add other styling as desired (width, height, etc.) */
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* From Uiverse.io by Pankaj-Meharchandani */ 
+.cart-button {
+  position: relative;
+  padding: 0.8em 0.7em;
+  font-family: Courier, monospace;
+  font-size: 1.1em;
+  color: #4a4a4a; /* Dark gray for light theme */
+  cursor: pointer;
+  line-height: 1;
+  background: transparent;
+  border-radius: 0.77em;
+  border: none;
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+
+  transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+.glass-effect {
+  position: absolute;
+  inset: -0.45em;
+  border-radius: 1rem;
+  background: linear-gradient(
+    165deg,
+    rgba(0, 0, 0, 0.05),
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.05) 80%,
+    rgba(0, 0, 0, 0.02)
+  );
+  z-index: -3;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.15),
+    0 0 20px 1px rgb(200 200 200 / 60%);
+  transition: box-shadow 0.12s ease;
+}
+
+.cart-button::before {
+  content: "";
+  position: absolute;
+  inset: -0.8em;
+  background: radial-gradient(
+      circle at top center,
+      rgba(255, 200, 135, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at top left,
+      rgba(102, 190, 240, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 100, 100, 0.6) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at bottom center,
+      rgba(147, 112, 190, 0.6) 0%,
+      transparent 80%
+    );
+  border-radius: inherit;
+  filter: blur(0.3em);
+  opacity: 0.9;
+  z-index: -2;
+  transition: all 0.12s ease;
+}
+
+.cart-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#f0f0f0, #e0e0e0);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.button-text {
+  position: relative;
+  background: linear-gradient(#e0e0e0, #f0f0f0);
+  padding: 0.85em 1.4em;
+  border: none;
+  border-radius: 999em;
+  display: block;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 2;
+  transition: all 0.12s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cart-button:hover {
+  transform: translateY(-2px);
+}
+
+.cart-button:hover .glass-effect {
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.15),
+    0 0 30px 2px rgb(220 220 220 / 70%);
+}
+
+.cart-button:hover::before {
+  opacity: 1;
+  filter: blur(0.4em);
+  transform: scale(1.05);
+}
+
+.cart-button:hover .button-text {
+  transform: scale(1.02);
+}
+
+.cart-button:active {
+  transform: translateY(3px) scale(0.95);
+  transition: transform 0.08s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-button:active .glass-effect {
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1),
+    0 0 15px 0 rgb(200 200 200 / 50%);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.cart-button:active::before {
+  opacity: 1;
+  filter: blur(1em);
+  transform: scale(1.1);
+  inset: -0.45em;
+  transition: all 0.08s ease;
+}
+
+.cart-button:active .button-text {
+  transform: scale(0.92);
+  background: linear-gradient(#ececec, #dcdcdc);
+  transition: all 0.08s ease;
+}
+
+.floating-leaves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so users can click through */
+  overflow: hidden;
+}
+
+.leaf {
+  position: absolute;
+  width: 30px; /* adjust size */
+  opacity: 0.7;
+  animation: floatLeaf 10s linear infinite;
+}
+
+.leaf1 {
+  top: -50px;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.leaf2 {
+  top: -50px;
+  left: 50%;
+  animation-delay: 3s;
+  animation-duration: 15s;
+}
+
+.leaf3 {
+  top: -50px;
+  left: 80%;
+  animation-delay: 6s;
+  animation-duration: 10s;
+}
+
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+.timer-glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.4em 1em;
+  border-radius: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  margin: 10px auto;
+}
+
+
