@@ -39,6 +39,7 @@ function App() {
   const NewQuote = () => {
     //so we this function will render a new quote to the message state hook
     fetchData();
+    setCountdown(60);
   };
 
 
