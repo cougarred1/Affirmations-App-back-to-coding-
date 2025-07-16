@@ -59,7 +59,7 @@ function App() {
   
 
   return (
-    // so first
+    //hi
     <>
       <div>
         <h1 className='affirmation-title'>Positive Affirmations</h1>
